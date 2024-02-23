@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ReceiptEmailPopup" owl="1">
+        <div role="dialog" class="modal-dialog">
+            <Draggable>
+                <div class="popup popup-confirm" style="height: 250px !important;">
+
+                    <header class="title drag-handle" style="color: black !important;">
+                        <t t-esc="props.title"/>
+                    </header>
+
+                    <main class="body">
+                        <div class="delivery-note" style="margin-top:16px; height: 50px !important; overflow: auto;">
+                            <div style="color: black !important; font-size: 20px; overflow: auto;">
+                                Reference :
+                                <t>
+                                        <input type="text" t-att-value="''"
+                                               id="payment_ref"
+                                               style="width: 75% !important; margin-top: 3px;color: black !important;border-radius: 8px;"
+                                               />
+                                </t>
+                            </div>
+                        </div>
+                    </main>
+
+                    <footer class="footer">
+                        <div class="button confirm" t-on-click="save" style="border: 1px solid #000000; color: #ffffff;
+                                    font-size: 15px; background: rgb(33 181 107);">
+                            <t t-esc="props.confirmText"/>
+                        </div>
+                        <div class="button cancel" t-on-click="cancel" style="border: 1px solid #000000; color: black;">
+                            <t t-esc="props.cancelText"/>
+                        </div>
+                    </footer>
+
+                </div>
+            </Draggable>
+        </div>
+    </t>
+</templates>
